@@ -1,0 +1,232 @@
+HTML
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scan.co</title>
+
+    <link rel="stylesheet" href="design1.css">
+
+
+</head>
+
+<body>
+    <script src="script.js"></script>
+
+    <div class="logo">
+
+        <a href="#">Logo</a>
+
+    </div>
+
+    <section id="page1">
+
+        
+
+        <nav>
+
+            <ul class="sidebar">
+
+                <li  onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224
+ 224Z"/></svg></a></li>
+
+                <li><a href="#page1">HOME</a></li>
+
+                <li><a href="#page4">About us</a></li>
+
+                <li><a href="#">FAQs</a></li>
+
+                <li><a href="#page3">Login</a></li>
+
+            </ul>
+
+            <ul>
+
+                
+
+                <li class="hideOnMobile"><a href="#page1">HOME</a></li>
+
+                <li class="hideOnMobile"><a href="#page4">About us</a></li>
+
+                <li class="hideOnMobile"><a href="#">FAQs</a></li>
+
+                <li class="hideOnMobile"><a href="#page3">Login</a></li>
+
+                <li class="menu-button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+
+            </ul>
+
+        </nav>
+
+       <h1>ScanUp.co</h1>
+
+            <p>Scanning and uploading now made a whole<br>lot easier</p>
+
+            <div>
+
+                <a class="get_started" href="#page2">
+
+                    get started
+
+                </a>
+
+            </div>
+
+    
+
+    </section>
+
+    <div class="seperation">
+
+        --
+
+    </div>
+
+    <section id="page2">
+
+
+        <p>
+
+            <div class="container">
+
+                    <h1 class="ocr-doc-scan">OCR Document Scanner</h1>
+
+                    <p class="instruc-user">Upload an image or PDF document to extract text using OCR</p>
+
+                    <div class="choose-file">
+
+                        <input type="file" id="fileInput" accept="image/*,application/pdf">
+
+                    </div>
+
+                    <div class="language-select">
+
+                        <p for="languageSelect"> Select Language:
+
+                            <select id="languageSelect">
+
+                                <option value="english">English</option>
+
+                                <option value="hindi">Hindi</option>
+
+                            
+
+                            </select>
+
+                        </p>
+
+                    </div>
+
+            <!-- use this onclick command in your file to initiate-->
+
+                    <button onclick="processOCR()" class="extract-text">Extract Text</button>
+
+            
+
+                    <!-- Progress display area -->
+
+                    <div id="progress">
+
+                        <p id="progressText">No file selected</p>
+
+                    </div>
+
+            
+
+                    <!-- Preview and output sections -->
+
+                    <div id="preview"></div>
+
+                    <div id="result">
+
+                        <h2 class="extracted-text">Extracted Text:</h2>
+
+                        <pre id="textOutput"></pre>
+
+                    </div>
+
+            </div>
+
+         </p>
+
+    </section>
+
+    <div class="seperation">
+
+        --
+
+    </div>
+
+    <section id="page3">
+
+        <h1>Scan.co</h1>
+
+        <p>Scanning and uploading now made a whole<br>lot easier</p>
+
+    </section>
+
+    <div class="seperation">
+
+        --
+
+    </div>
+
+    <section id="page4">
+
+        <h1>About us</h1>
+
+        <p>Transforming information from physical documents can be tedious and is often susceptible to human error. With ScanUp.co,
+
+             you can harness the power of optical character recognition to effortlessly extract text from scanned documents, ensuring that the corresponding
+
+            fields in digital forms are filled accurately and efficiently. Save time and reduce errors with our innovative solution!</p>
+        <p>Meet the developers</p>
+        <p>Abhinav Singh</p>
+        <p>Arnav Verma</p>
+        <p>Divyam Saluja</p>
+        <p>Riddhi Jain</p>
+        <p>Vedula Srisaket Rama</p>
+
+    </section>
+
+
+    <script>
+
+        function showSidebar(){
+
+            const sidebar = document.querySelector('.sidebar')
+
+            sidebar.style.display = 'flex'
+
+        }
+
+        function hideSidebar(){
+
+            const sidebar = document.querySelector('.sidebar')
+
+            sidebar.style.display = 'none'
+
+        }
+
+    </script>
+
+    <!-- Tesseract.py library -->
+
+    <script src="#"></script>
+
+    <!-- External python file -->
+
+    <script src="#"></script>
+
+
+</body>
+
+</html>
