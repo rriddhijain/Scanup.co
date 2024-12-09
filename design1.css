@@ -21,13 +21,15 @@ section{
 
     flex-direction: column;
 
-    min-height:500px;
+    height: 100vh;
 
     padding: 10vw;
 
     background-color: #1c1b1b;
 
     padding-top: 0;
+
+    padding-right: 25px;
 
 }
 
@@ -91,6 +93,8 @@ p{
 
     color: aliceblue;
 
+  
+
 }
 
 
@@ -108,8 +112,12 @@ p{
 
     text-align: center;
     
+     position: relative;
 
-  
+     left : 25%;
+     
+      
+
 
     
 
@@ -241,7 +249,13 @@ nav ul{
     justify-content: flex-end;
 
     align-items: center;
+     
+   
 
+}
+
+.navbarmain{
+    margin:0;
 
 }
 
@@ -287,31 +301,11 @@ nav a:hover{
 
 .logo{
 
-    display:flex;
+    position:fixed;
 
-    justify-content: flex-start;
+    top:0;
 
-    background-color: #9d9d8f;
-
-    border-radius: 40%;
-
-    background-color: #d5d5c5;
-
-    border:0;
-
-    padding: 10px 25px;
-
-    border-radius: 45px;
-
-    font-size: 25px ;
-
-    text-decoration-line: none;
-
-    font-weight: 600;
-
-    margin-top: 20px;
-
-    color: black;
+    left:0;
 
     
 
