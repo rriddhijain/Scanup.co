@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsor Registration</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 1000px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+        }
+        .form-group .radio-group {
+            display: flex;
+            gap: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .column{
+            display: flex;
+            justify-content: space-between;
+        }
+        .column_1{
+            width: 48%;
+            padding-right: 40px;
+           
+        }
+        .column_2{
+            width: 48%;
+            padding-left: 40px;
+            padding-right: 14px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+  <div class="form-container">
+        <h1>Sponsor Registration</h1>
+        <form id="sponsor-form">
+            <div class = "column">
+               <div class = "column_1">
+                    <div class="form-group"> <label for="prefix">Prefix</label>
+                    <input type="text" id="prefix" name="prefix">
+                    </div>
+                    <div class="form-group"> <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group"> <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="form-group"> <label for="pronouns">Preferred Pronouns</label>
+                    <input type="text" id="pronouns" name="pronouns">
+                    </div>
+                    <div class="form-group"> <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group"> <label for="work-phone">Work Phone</label>
+                    <input type="tel" id="work-phone" name="work-phone">
+                    </div>
+                    <div class="form-group"> <label for="cell-phone">Cell Phone</label>
+                    <input type="tel" id="cell-phone" name="cell-phone">
+                    </div>
+                    <div class="form-group"> <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" name="job-title">
+                    </div>
+                    <div class="form-group"> <label for="company">Company</label>
+                    <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group"> <label for="address">Full Business Address</label> <textarea id="address" name="address" rows="3"></textarea>
+                    </div>
+                    <div class="form-group"> <label for="website">Company Website</label>
+                    <input type="url" id="website" name="website">
+                    </div>
+                </div>    
+
+                <div class = "column_2">
+                    <div class="form-group"> <label for="description">Company Description</label> <textarea id="description" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group"> <label for="facebook">Company Facebook Page</label>
+                    <input type="url" id="facebook" name="facebook">
+                    </div>
+                    <div class="form-group"> <label for="twitter">Company Twitter Handle</label>
+                    <input type="text" id="twitter" name="twitter">
+                    </div>
+                    <div class="form-group"> <label for="linkedin">Company LinkedIn Handle</label>
+                    <input type="text" id="linkedin" name="linkedin">
+                    </div>
+                    <div class="form-group"> <label>Sponsorship Level</label>
+                    <div class="radio-group"> <label><input type="radio" name="sponsorship" value="Gold" required> Gold</label> <label><input type="radio" name="sponsorship" value="Diamond"> Diamond</label> <label><input type="radio" name="sponsorship" value="Platinum"> Platinum</label>
+                    </div>
+                    </div>
+                    <div class="form-group"> <label for="guests">Additional Guests (name, email)</label> <textarea id="guests" name="guests" rows="3"></textarea>
+                    </div> <button type="submit" class="submit-btn">Submit</button>
+                </div>  
+            </div>      
+        </form>
+    </div>
+  
+
+  <script>
+    document.getElementById('sponsor-form').addEventListener('submit', function(e) {
+        const email = document.getElementById('email').value;
+        if (!email.includes('@')) {
+            e.preventDefault();
+            alert('Please enter a valid email address.');
+        }
+    });
+</script>
+</body>
+</html>
