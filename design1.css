@@ -112,9 +112,9 @@ p{
 
     text-align: center;
     
-     position: relative;
+    position: relative;
 
-     left : 25%;
+    align-self: center;
      
       
 
@@ -306,10 +306,40 @@ nav a:hover{
     top:0;
 
     left:0;
+    
+    z-index: 0;
+    
+   
+}
+
+.logoimg{
+    height: 90px;
+
+    width: 90px;
+
+    border-radius: 50px;
+    padding: 10px;
 
     
 
+    
 }
+
+.menu-button{
+
+    display: none;
+}
+
+@media(max-width:768px){
+    .hideOnMobile{
+        display:none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+
 
 .seperation{
 
@@ -332,5 +362,7 @@ nav a:hover{
     margin-top: 20px;
 
     color: #33332e;
+
+    z-index: 999;
 
 }

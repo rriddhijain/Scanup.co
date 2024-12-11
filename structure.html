@@ -1,4 +1,4 @@
-HTML
+
 
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ HTML
     <section id="page1">
 
         
-        <div class="logo"> <img src="C:\Users\abhin\Programs\github\Scanup.co\scanuplogo.jpg"> </div> 
+        <div class="logo"> <img class="logoimg" src="scanuplogofinal.jpg"> </div> 
         <nav>
 
             <ul class="sidebar">
@@ -69,7 +69,7 @@ HTML
 
             <div>
 
-                <a class="get_started" href="#page2">
+                <a onclick=moveToPage2() class="get_started" href="#">
 
                     get started
 
@@ -211,6 +211,13 @@ HTML
 
             sidebar.style.display = 'none'
 
+        }
+
+        function moveToPage2(){
+
+            const page2 = document.querySelector('#page2')
+
+            page2.scrollIntoView({behavior: 'smooth'})
         }
 
     </script>
