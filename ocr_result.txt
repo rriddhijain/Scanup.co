@@ -1,0 +1,14 @@
+FIRST NAME: Mayank
+MIDDLE NAME: Shri
+LAST NAME: Gil
+
+CITY: New Delhi
+GENDER: Male
+CONTACT DATEOFBIRTH: 12-02-2024
+
+‘State: Delhi
+Pincode: 110085
+EMAIL ADDRESS:  Mayank@proton.me
+Phone: 6942077153
+SKILLS ADDRESS LINE 1: Purnima Apartments
+— ADDRESS LINE 2: Rohini, New Delhi
