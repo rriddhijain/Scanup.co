@@ -229,6 +229,30 @@
     <script src="#"></script>
 
 
+  
+    <script src="content.js"></script>
+    <script>
+        
+        function autoFillForm() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const elements = document.querySelectorAll('input, select, textarea');
+                    elements.forEach(element => {
+                        const name = element.name.toLowerCase();
+                        if (data[name]) {
+                            element.value = data[name];
+                        }
+                    });
+                });
+        }
+
+    
+        autoFillForm();
+    </script>
+
+
+
 </body>
 
 </html>
