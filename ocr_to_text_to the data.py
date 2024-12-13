@@ -297,10 +297,10 @@ def detect_language(text_file, csv_path):
 
 
 # Update these paths accordingly
-text_file = r"D:\divyam_folders_mosip\OCR_Result.txt"
-csv_path = r"D:\divyam_folders_mosip\Output.csv"
+text_file = "ocr_result.txt"
+csv_path = "Output.csv"
 detect_language(text_file, csv_path)
-json_path=r"D:\divyam_folders_mosip\Json_Path.json"
+json_path="Json_Path.json"
 with open(csv_path,mode="r",encoding="utf=8") as f:
     csv_reader=csv.DictReader(f)
     data=[row for row in csv_reader]

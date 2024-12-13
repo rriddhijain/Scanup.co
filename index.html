@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR File Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>OCR File Upload</h2>
+        <form id="ocr-form" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="file" accept=".jpg,.jpeg,.png,.pdf" required>
+            <button type="submit">Upload and Process</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('ocr-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from refreshing the page
+            let formData = new FormData();
+            formData.append("file", document.getElementById("file-input").files[0]);
+
+            console.log('Uploading file:', document.getElementById("file-input").files[0].name);  // Log file name
+
+            // Send the file to the backend using Fetch API
+            fetch('http://10.61.0.239:5500/upload', {
+                method: 'POST',   
+                body: formData
+            })
+            .then(response => {
+                console.log('Response status:', response.status);  // Log the response status
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(data => {
+                console.log('Response data:', data);  // Log response data
+                if (data.success) {
+                    document.getElementById('result').innerHTML = `<p>OCR Processed Successfully! <a href="${data.file_path}" target="_blank">Download OCR Result</a></p>`;
+                } else {
+                    document.getElementById('result').innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+             });
+        });
+
+    </script>
+</body>
+</html>

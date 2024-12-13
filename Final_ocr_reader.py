@@ -124,6 +124,8 @@ def preprocess_ocr_text(ocr_text):
     # Process each line to detect fields and their values
     for line in lines:
         line = line.strip()
+        # Replace unwanted characters
+        line = line.replace("‘", "").replace("—", "")
         line = line.replace("Gity", "CITY")
         line = line.replace("=", "")
         line = separate_fields_on_same_line(line, field_names)
@@ -275,5 +277,5 @@ def main(image_path):
 
 # Entry point of the script
 if __name__ == "__main__":
-    image_path = "test_images/sampleform.jpg"  # Path to the input image
+    image_path = "uploads\input_img.jpg"  # Path to the input image
     main(image_path)
