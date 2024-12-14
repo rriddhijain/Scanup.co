@@ -3,57 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR File Upload</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
-        input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px;
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #result {
-            margin-top: 20px;
-            color: #333;
-        }
-    </style>
+    <title>Scan.co</title>
+
+    <link rel="stylesheet" href="design1.css">
+    
 </head>
 <body>
-    <div class="container">
-        <h2>OCR File Upload</h2>
-        <form id="ocr-form" enctype="multipart/form-data">
-            <input type="file" id="file-input" name="file" accept=".jpg,.jpeg,.png,.pdf" required>
-            <button type="submit">Upload and Process</button>
-        </form>
-        <div id="result"></div>
+    <section id="page1">
+
+        
+        <div class="logo"> <img class="logoimg" src="scanuplogofinal.jpg"> </div> 
+        <nav>
+
+            <ul class="sidebar">
+
+                <li  onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224
+                                    224Z"/></svg></a></li>
+                 
+                                  
+
+                <li><a href="#page1">HOME</a></li>
+
+                <li><a href="#page4">About us</a></li>
+
+                <li><a href="#">FAQs</a></li>
+
+                <li><a href="#page3">Login</a></li>
+
+            </ul>
+
+            <ul  class="navbarmain">
+
+               
+
+                <li class="hideOnMobile"><a href="#page1">HOME</a></li>
+
+                <li class="hideOnMobile"><a href="#page4">About us</a></li>
+
+                <li class="hideOnMobile"><a href="#">FAQs</a></li>
+
+                <li class="hideOnMobile"><a href="#page3">Login</a></li>
+
+                <li class="menu-button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+
+            </ul>
+
+        </nav>
+
+       <h1>ScanUp.co</h1>
+
+            <p>Scanning and uploading now made a whole<br>lot easier</p>
+
+            <div>
+
+                <a onclick=moveToPage2() class="get_started" href="#">
+
+                    get started
+
+                </a>
+
+            </div>
+
+    
+
+    </section>
+
+    <div class="seperation">
+
+        --
+
     </div>
+
+    <section id="page2">
+
+
+        <p>
+
+
+
+
+            <div class="container">
+                <h1 class="ocr-doc-scan">OCR Document Scanner</h1>
+
+                <p class="instruc-user">Upload an image or PDF document to extract text using OCR</p>
+                <div class="choose-file">
+                    <form id="ocr-form" enctype="multipart/form-data">
+                       
+                           <input type="file" id="file-input" name="file" accept=".jpg,.jpeg,.png,.pdf" required>
+                      
+                        <button type="submit">Upload and Process</button>
+                    </form>
+               </div> 
+                <div class="language-select">
+
+                    <p for="languageSelect"> Select Language:
+
+                        <select id="languageSelect">
+
+                            <option value="english">English</option>
+
+                            <option value="hindi">Hindi</option>
+
+                        
+
+                        </select>
+
+                    </p>
+
+                </div>
+                <div id="progress">
+
+                    <p id="progressText">store your file here</p>
+
+                </div>
+
+                <div id="result"></div>
+            </div>
+
+       
+        </p>
+
+    </section>
+
+
+    <div class="seperation">
+
+        --
+
+    </div>
+
+    <section id="page3">
+
+        <h1>Scan.co</h1>
+
+        <p>Scanning and uploading now made a whole<br>lot easier</p>
+
+    </section>
+
+    <div class="seperation">
+
+        --
+
+    </div>
+
+    <section id="page4">
+
+        <h1>About us</h1>
+
+        <p>Transforming information from physical documents can be tedious and is often susceptible to human error. With ScanUp.co,
+
+             you can harness the power of optical character recognition to effortlessly extract text from scanned documents, ensuring that the corresponding
+
+            fields in digital forms are filled accurately and efficiently. Save time and reduce errors with our innovative solution!</p>
+        <p>Meet the developers</p>
+        <p>Abhinav Singh</p>
+        <p>Arnav Verma</p>
+        <p>Divyam Saluja</p>
+        <p>Riddhi Jain</p>
+        <p>Vedula Srisaket Rama</p>
+
+    </section>
+    
+
+    <script>
+
+        function showSidebar(){
+
+            const sidebar = document.querySelector('.sidebar')
+
+            sidebar.style.display = 'flex'
+
+        }
+
+        function hideSidebar(){
+
+            const sidebar = document.querySelector('.sidebar')
+
+            sidebar.style.display = 'none'
+
+        }
+
+        function moveToPage2(){
+
+            const page2 = document.querySelector('#page2')
+
+            page2.scrollIntoView({behavior: 'smooth'})
+        }
+
+    </script>
+    
 
     <script>
         document.getElementById('ocr-form').addEventListener('submit', function(event) {
