@@ -3,7 +3,7 @@ chrome.runtime.onInstalled.addListener(() => {
     console.log('Extension installed');
 
     // Load the data from the JSON file into chrome.storage.local
-    fetch(chrome.runtime.getURL('data.json'))
+    fetch(chrome.runtime.getURL('Json_Path.json'))
         .then(response => response.json())
         .then(data => {
             chrome.storage.local.set({ formData: data }, () => {
