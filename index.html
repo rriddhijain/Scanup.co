@@ -64,8 +64,8 @@
             console.log('Uploading file:', document.getElementById("file-input").files[0].name);  // Log file name
 
             // Send the file to the backend using Fetch API
-            fetch('http://10.61.0.239:5500/upload', {
-                method: 'POST',   
+            fetch('http://localhost:5500/upload', {
+                method: 'POST',
                 body: formData
             })
             .then(response => {

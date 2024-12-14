@@ -16,16 +16,29 @@ os.makedirs('result_images', exist_ok=True)
 # Path to the OCR result file
 ocr_result_path = "ocr_result.txt"
 
-# Function to process OCR with your script
+# Function to process OCR and handle CSV/JSON generation
 def run_ocr(image_path):
     try:
+        # Run Final_ocr_reader.py for OCR
         result = subprocess.run(['python', 'Final_ocr_reader.py', image_path], check=True, capture_output=True)
-        print("OCR Output:", result.stdout.decode())  # Print the output of the OCR script
-        return jsonify({"success": True, "file_path": ocr_result_path})
+        print("OCR Output:", result.stdout.decode())  # Debug: Print OCR script output
+
+        # Call ocr_to_text_to_the_data.py to process the ocr_result.txt
+        subprocess.run(['python', 'ocr_to_text_to the data.py'], check=True)
+        print("CSV and JSON files generated successfully.")  # Debug: Confirm CSV/JSON generation
+
+        # Return paths to generated files
+        return jsonify({
+            "success": True,
+            "ocr_result": ocr_result_path,         # Path to ocr_result.txt
+            "csv_file": "Output.csv",             # Path to CSV file
+            "json_file": "Json_Path.json"         # Path to JSON file
+        })
     except subprocess.CalledProcessError as e:
-        print(f"Error running OCR: {e}")
-        print(f"Error Output: {e.output.decode()}")  # Print the error output
-        return jsonify({"success": False, "error": f"OCR processing failed: {str(e)}"}), 500
+        print(f"Error during processing: {e}")
+        print(f"Error Output: {e.output.decode()}")  # Debug: Error output
+        return jsonify({"success": False, "error": f"Processing failed: {str(e)}"}), 500
+
 
 
 
@@ -61,3 +74,7 @@ def upload_file():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5500)
+
+
+
+
