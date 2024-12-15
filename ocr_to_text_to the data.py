@@ -247,7 +247,7 @@ def convert_csv_to_json(csv_path, json_path):
             data = [row for row in csv_reader]
         
         with open(json_path, mode="w", encoding="utf-8") as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
+            json.dump(data[0], f, indent=4, ensure_ascii=False)
         
         print(f"Data successfully converted to {json_path}")
     except Exception as e:
@@ -264,7 +264,7 @@ def open_file(file_path):
 # Call functions
 text_file = "ocr_result.txt"  # Replace with your actual file path
 csv_path = "output.csv"
-json_path = "Json_path.json"
+json_path = "experiment\Json_Path.json"
 
 # Assuming you detect language and process accordingly
 copy_txt_to_csv_english(text_file, csv_path)

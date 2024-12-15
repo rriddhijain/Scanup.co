@@ -7,8 +7,8 @@ function autoFillForm() {
 
             // Define common patterns for field names
             const fieldPatterns = {
-                "name": ["name","Name","Full Name","full name","full-name","full_name","fullname"],
-                "first name": ["Firstname","First Name","First_Name", "First_name", "fname", "name","Name"],
+                "name": ["name","Name","firstname","Full Name","full name","full-name","full_name","fullname"],
+                "first name": ["Firstname","First Name","First_Name", "First_name", "fname", "name","Name","fullname"],
                 "middle name": ["middlename", "middle-name", "middle_name", "mname", "Middle Name"],
                 "last name": ["lastname", "last-name", "last_name", "lname", "surname","Last Name"],
                 "gender": ["gender"],
